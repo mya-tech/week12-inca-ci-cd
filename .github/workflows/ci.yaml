@@ -13,7 +13,7 @@ jobs:
       - name: Install packages
         run: npm ci
 
-      - name: Run ESLint
+      - name: Run ESlint
         run: npm run lint
 
       - name: Run Jest Tests
