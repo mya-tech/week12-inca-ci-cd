@@ -1,5 +1,6 @@
 name: CI
 on: [push]
+
 jobs:
   run-tests:
     name: Lint and Test
@@ -12,5 +13,14 @@ jobs:
       - name: Install packages
         run: npm ci
 
-      - name: Run ESlint
+      - name: Run ESLint
         run: npm run lint
+
+      - name: Run Jest Tests
+        run: npm run ci:test
+
+      - name: Run Cypress Tests
+        uses: cypress-io/github-action@v4
+        with:
+          build: npm run build
+          start: npm start
